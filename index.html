@@ -17,18 +17,21 @@
     <div class="breath">
         <div class="breath-content"></div>
     </div>
-    <div class="timer">
+    <div id="timerSelect" class="timer">
         <div class="minutes">
             <span id="increase" class="button-icon">&#9650;</span>
-            <span class="minutenumber">5</span>
+            <span id="minutes" class="number">5</span>
             <span id="decrease" class="button-icon">&#9660;</span>
         </div>
-        <span class="units">minutes</span>
-        <button>Start</button>
+        <span>minutes</span>
+        <button id="start">Start</button>
     </div>
+    <div id="countdown" class="number"></div>
 </div>
 <footer>
     <small>Dev & Rock 'n' roll © 2016 Glicer</small>
 </footer>
+
+<script type="text/javascript" src="js/breath-focus.js"></script>
 </body>
 </html>
