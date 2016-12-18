@@ -184,3 +184,17 @@ footer {
         opacity: 0;
     }
 }
+
+/********************************************/
+
+@media screen and (max-width: 767px) {
+    .breath {
+         width: 220px;
+         height: 220px;
+     }
+
+    .breath-content {
+        width: 200px;
+        height: 200px;
+    }
+}
