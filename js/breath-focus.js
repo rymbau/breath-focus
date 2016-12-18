@@ -16,7 +16,9 @@ var breathFocus = (function () {
 
     function init() {
         document.body.style.webkitAnimationPlayState = "paused";
+        document.body.style.animationPlayState = "paused";
         breathContent.style.webkitAnimationPlayState = "paused";
+        breathContent.style.animationPlayState = "paused";
 
         decrease.addEventListener("click", function () {
             if (breathTime > 1) {
@@ -35,7 +37,9 @@ var breathFocus = (function () {
             countdown.classList.add("fade-in");
             startTimer(breathTime * 60);
             document.body.style.webkitAnimationPlayState = "running";
+            document.body.style.animationPlayState = "running";
             breathContent.style.webkitAnimationPlayState = "running";
+            breathContent.style.animationPlayState = "running";
 
         });
     }
@@ -57,7 +61,9 @@ var breathFocus = (function () {
                 timerSelect.classList.remove("fade-out");
                 countdown.classList.remove("fade-in");
                 document.body.style.webkitAnimationPlayState = "paused";
+                document.body.style.animationPlayState = "paused";
                 breathContent.style.webkitAnimationPlayState = "paused";
+                breathContent.style.animationPlayState = "paused";
             }
         }
 
