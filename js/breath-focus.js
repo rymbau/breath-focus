@@ -1,6 +1,7 @@
 var breathFocus = (function () {
     var breathInterval = null;
     var breathTime = 5;
+    var stateInterval = null;
 
     var breathContent = document.getElementsByClassName("breath-content")[0];
     var timerSelect = document.getElementById("timerSelect");
@@ -9,6 +10,8 @@ var breathFocus = (function () {
     var decrease = document.getElementById("decrease");
     var minutes = document.getElementById("minutes");
     var countdown = document.getElementById("countdown");
+    var breathMsg = document.getElementById("breathMsg");
+    var message = "Get yourself comfortable and start breathing when ready";
 
     window.onload = function () {
         init();
@@ -19,6 +22,8 @@ var breathFocus = (function () {
         document.body.style.animationPlayState = "paused";
         breathContent.style.webkitAnimationPlayState = "paused";
         breathContent.style.animationPlayState = "paused";
+
+        breathMsg.textContent = message;
 
         decrease.addEventListener("click", function () {
             if (breathTime > 1) {
@@ -33,8 +38,19 @@ var breathFocus = (function () {
         });
 
         start.addEventListener("click", function () {
-            timerSelect.classList.add("fade-out");
-            countdown.classList.add("fade-in");
+
+            breathMsg.textContent = "Breath In";
+            updateClass(breathMsg, "fade-in", "breath-msg");
+            breathMsg.style.webkitAnimationPlayState = "running";
+            breathMsg.style.animationPlayState = "running";
+
+            stateInterval = setInterval(function () {
+                breathMsg.textContent = (breathMsg.textContent === "Breath Out") ? "Breath In" : "Breath Out";
+            }, 5000);
+
+            updateClass(timerSelect, "fade-in", "fade-out");
+            updateClass(countdown, "fade-out", "fade-in");
+
             startTimer(breathTime * 60);
             document.body.style.webkitAnimationPlayState = "running";
             document.body.style.animationPlayState = "running";
@@ -58,16 +74,27 @@ var breathFocus = (function () {
 
             if (--timer < 0) {
                 clearInterval(breathInterval);
-                timerSelect.classList.remove("fade-out");
-                countdown.classList.remove("fade-in");
+                clearInterval(stateInterval);
+
+                updateClass(timerSelect, "fade-out", "fade-in");
+                updateClass(countdown, "fade-in", "fade-out");
+                breathMsg.textContent = message;
+
                 document.body.style.webkitAnimationPlayState = "paused";
                 document.body.style.animationPlayState = "paused";
                 breathContent.style.webkitAnimationPlayState = "paused";
                 breathContent.style.animationPlayState = "paused";
+                breathMsg.style.webkitAnimationPlayState = "paused";
+                breathMsg.style.animationPlayState = "paused";
             }
         }
 
         breathTimer();
         breathInterval = setInterval(breathTimer, 1000);
+    }
+
+    function updateClass(target, removeClass, addClass) {
+        target.classList.remove(removeClass);
+        target.classList.add(addClass);
     }
 })();

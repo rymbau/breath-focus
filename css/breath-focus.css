@@ -22,6 +22,7 @@ body {
     flex-flow: row nowrap;
     flex-direction: column;
     justify-content: center;
+    align-content: stretch;
     align-items: center;
     width: 100%;
     height: 100%;
@@ -30,7 +31,7 @@ body {
 .breath {
     width: 320px;
     height: 320px;
-    margin: 30px auto;
+    margin: 10px auto;
     padding: 10px;
     background-color: #AFF2BF;
     border-radius: 50%;
@@ -52,6 +53,25 @@ body {
     animation: scale 10s infinite ease-in-out;
     -webkit-animation-play-state: paused;
     animation-play-state: paused;
+
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+}
+
+/********************************************/
+
+#breathMsg {
+    font-size: 22px;
+    color: #616161;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.breath-msg {
+    -webkit-animation: colorchange 10s infinite ease-in-out alternate, fadeIn 1s 1 both;;
+    animation: colorchange 10s infinite ease-in-out alternate, fadeIn 1s 1 both;;
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
 }
 
 /********************************************/
@@ -59,11 +79,7 @@ body {
 .timer {
     display: flex;
     align-items: center;
-    height: 80px;
     color: #616161;
-    opacity: 1;
-    -webkit-transition: opacity 1s;
-    transition: opacity 1s;
 }
 
 .timer .minutes {
@@ -108,21 +124,20 @@ body {
 }
 
 #countdown {
-    height: 80px;
+    height: 20px;
     margin-top: -50px;
-    opacity: 0;
-    -webkit-transition: opacity 1s;
-    transition: opacity 1s;
 }
 
 /********************************************/
 
 .fade-in {
-    opacity: 1 !important;
+    -webkit-animation: fadeIn 1s 1 both;
+    animation: fadeIn 1s both;
 }
 
 .fade-out {
-    opacity: 0;
+    -webkit-animation: fadeOut 1s 1 both;
+    animation: fadeOut 1s both;
 }
 
 /********************************************/
@@ -173,13 +188,55 @@ footer {
     }
 }
 
-@keyframes fadeIn {
+@-webkit-keyframes colorchange {
+    50% {
+        color: #f9f7c2;
+    }
+}
+
+@keyframes colorchange {
+    50% {
+        color: #f9f7c2;
+    }
+}
+
+/********************************************/
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
     to {
         opacity: 1;
     }
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
 @keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
     to {
         opacity: 0;
     }
@@ -189,9 +246,9 @@ footer {
 
 @media screen and (max-width: 767px) {
     .breath {
-         width: 220px;
-         height: 220px;
-     }
+        width: 220px;
+        height: 220px;
+    }
 
     .breath-content {
         width: 200px;
