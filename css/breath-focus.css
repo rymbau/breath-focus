@@ -7,6 +7,7 @@ body {
     display: flex;
     flex-direction: column;
     font-family: Verdana, Arial, sans-serif;
+    font-size: 1em;
     margin: 0;
     width: 100%;
     height: 100%;
@@ -26,6 +27,8 @@ body {
     align-items: center;
     width: 100%;
     height: 100%;
+    letter-spacing: 2px;
+    font-size: 1.2em;
 }
 
 .breath {
@@ -61,17 +64,12 @@ body {
 /********************************************/
 
 #breathMsg {
-    font-size: 22px;
+    display: flex;
+    align-items: flex-end;
+    height: 80px;
     color: #616161;
-    margin-bottom: 15px;
     text-align: center;
-}
-
-.breath-msg {
-    -webkit-animation: colorchange 10s infinite ease-in-out alternate, fadeIn 1s 1 both;;
-    animation: colorchange 10s infinite ease-in-out alternate, fadeIn 1s 1 both;;
-    -webkit-animation-play-state: paused;
-    animation-play-state: paused;
+    margin-bottom: 20px;
 }
 
 /********************************************/
@@ -80,6 +78,7 @@ body {
     display: flex;
     align-items: center;
     color: #616161;
+    height: 80px;
 }
 
 .timer .minutes {
@@ -98,8 +97,8 @@ body {
 }
 
 .timer button {
-    font-size: 22px;
     letter-spacing: 1px;
+    font-size: 1em;
     color: #7ef2dd;
     margin-left: 20px;
     padding: 6px 10px;
@@ -117,15 +116,15 @@ body {
 }
 
 .number {
-    font-size: 22px;
     margin-top: 2px;
     margin-bottom: 2px;
     color: #616161;
 }
 
 #countdown {
-    height: 20px;
+    text-align: center;
     margin-top: -50px;
+    height: 80px;
 }
 
 /********************************************/
@@ -185,18 +184,6 @@ footer {
 @keyframes bgcolor2 {
     50% {
         background-color: #57f2cd;
-    }
-}
-
-@-webkit-keyframes colorchange {
-    50% {
-        color: #f9f7c2;
-    }
-}
-
-@keyframes colorchange {
-    50% {
-        color: #f9f7c2;
     }
 }
 

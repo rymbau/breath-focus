@@ -38,12 +38,7 @@ var breathFocus = (function () {
         });
 
         start.addEventListener("click", function () {
-
             breathMsg.textContent = "Breath In";
-            updateClass(breathMsg, "fade-in", "breath-msg");
-            breathMsg.style.webkitAnimationPlayState = "running";
-            breathMsg.style.animationPlayState = "running";
-
             stateInterval = setInterval(function () {
                 breathMsg.textContent = (breathMsg.textContent === "Breath Out") ? "Breath In" : "Breath Out";
             }, 5000);
@@ -84,8 +79,6 @@ var breathFocus = (function () {
                 document.body.style.animationPlayState = "paused";
                 breathContent.style.webkitAnimationPlayState = "paused";
                 breathContent.style.animationPlayState = "paused";
-                breathMsg.style.webkitAnimationPlayState = "paused";
-                breathMsg.style.animationPlayState = "paused";
             }
         }
 
