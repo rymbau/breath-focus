@@ -192,40 +192,48 @@ footer {
 @-webkit-keyframes fadeIn {
     from {
         opacity: 0;
+        visibility: hidden;
     }
 
     to {
         opacity: 1;
+        visibility: visible;
     }
 }
 
 @keyframes fadeIn {
     from {
         opacity: 0;
+        visibility: hidden;
     }
 
     to {
         opacity: 1;
+        visibility: visible;
     }
 }
 
 @-webkit-keyframes fadeOut {
     from {
         opacity: 1;
+        visibility: visible;
     }
 
     to {
         opacity: 0;
+        visibility: hidden;
     }
 }
 
 @keyframes fadeOut {
     from {
         opacity: 1;
+        visibility: visible;
     }
 
     to {
         opacity: 0;
+        visibility: hidden;
     }
 }
 
