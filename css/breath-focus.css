@@ -1,16 +1,14 @@
 html {
-    width: 100%;
-    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 body {
     display: flex;
-    flex-direction: column;
     font-family: Verdana, Arial, sans-serif;
     font-size: 1em;
-    margin: 0;
-    width: 100%;
-    height: 100%;
+    min-height: 100vh;
+    margin: 0 auto;
     background-color: #F9F7D2;
     -webkit-animation: bgcolor 10s infinite ease-in-out;
     animation: bgcolor 10s infinite ease-in-out;
@@ -18,15 +16,23 @@ body {
     animation-play-state: paused;
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    align-content: center;
+    justify-content: center;
+    flex: 1 0 auto;
+    width: 100%;
+}
+
 .content {
     display: flex;
-    flex-flow: row nowrap;
+    flex: 1 0 auto;
     flex-direction: column;
     justify-content: center;
-    align-content: stretch;
+    align-content: center;
     align-items: center;
-    width: 100%;
-    height: 100%;
     letter-spacing: 2px;
     font-size: 1.2em;
 }
@@ -66,10 +72,12 @@ body {
 #breathMsg {
     display: flex;
     align-items: flex-end;
+    justify-content: center;
+    width: 100%;
     height: 80px;
+    margin-bottom: 20px;
     color: #616161;
     text-align: center;
-    margin-bottom: 20px;
 }
 
 /********************************************/

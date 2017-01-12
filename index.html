@@ -13,25 +13,27 @@
     <link rel="stylesheet" type="text/css" href="css/breath-focus.css">
 </head>
 <body>
-<div class="content">
-    <div id="breathMsg"></div>
-    <div class="breath">
-        <div class="breath-content"></div>
-    </div>
-    <div id="timerSelect" class="timer">
-        <div class="minutes">
-            <span id="increase" class="button-icon">&#9650;</span>
-            <span id="minutes" class="number">5</span>
-            <span id="decrease" class="button-icon">&#9660;</span>
+<div class="container">
+    <div class="content">
+        <span id="breathMsg"></span>
+        <div class="breath">
+            <div class="breath-content"></div>
         </div>
-        <span>minutes</span>
-        <button id="start">Start</button>
+        <div id="timerSelect" class="timer">
+            <div class="minutes">
+                <span id="increase" class="button-icon">&#9650;</span>
+                <span id="minutes" class="number">5</span>
+                <span id="decrease" class="button-icon">&#9660;</span>
+            </div>
+            <span>minutes</span>
+            <button id="start">Start</button>
+        </div>
+        <div id="countdown" class="number"></div>
     </div>
-    <div id="countdown" class="number"></div>
+    <footer>
+        <small>Dev & Rock 'n' roll © 2016 Glicer</small>
+    </footer>
 </div>
-<footer>
-    <small>Dev & Rock 'n' roll © 2016 Glicer</small>
-</footer>
 
 <script type="text/javascript" src="js/breath-focus.js"></script>
 </body>
