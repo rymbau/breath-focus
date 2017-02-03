@@ -11,27 +11,56 @@
     <meta name="author" content="© Glicer">
     <link rel="shortcut icon" href="img/favicon.ico">
     <link rel="stylesheet" type="text/css" href="css/breath-focus.css">
+    <link rel="stylesheet" type="text/css" href="css/breath-focus-font.css">
 </head>
 <body>
 <div class="container">
-    <div class="content">
-        <span id="breathMsg"></span>
-        <div class="breath">
-            <div class="breath-content"></div>
-        </div>
-        <div id="timerSelect" class="timer">
-            <div class="minutes">
-                <span id="increase" class="button-icon">&#9650;</span>
-                <span id="minutes" class="number">5</span>
-                <span id="decrease" class="button-icon">&#9660;</span>
+    <div class="main">
+        <button id="settings"><i id="settingsIcon" class="icon-cog"></i></button>
+        <div id="mainContent" class="main-content">
+            <span id="breathMsg"></span>
+
+            <div class="breath">
+                <div class="breath-content"></div>
             </div>
-            <span>minutes</span>
             <button id="start">Start</button>
+            <div id="countdown" class="number"></div>
         </div>
-        <div id="countdown" class="number"></div>
+        <div id="sidebar" class="sidebar">
+            <div class="option">
+                <h2>Options</h2>
+
+                <div class="info">
+                    <small>Choose your breath meditation timer options</small>
+                </div>
+                <hr>
+                <div>
+                    <div class="title">Speed</div>
+                    <div>
+                        <input id="default" type="radio" name="speed" checked>
+                        <label for="default">default</label><br>
+                        <input id="slow" type="radio" name="speed">
+                        <label for="slow">slow</label>
+                    </div>
+                </div>
+                <hr>
+                <div>
+                    <div class="title">Timer</div>
+                    <div id="timerSelect" class="timer">
+                        <div class="minutes">
+                            <i id="increase" class="icon-up-dir button-icon"></i>
+                            <span id="minutes" class="number">5</span>
+                            <i id="decrease" class="icon-down-dir button-icon"></i>
+                        </div>
+                        <label>minutes</label>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <footer>
         <small>Dev & Rock 'n' roll © 2016 Glicer</small>
+        <a href="https://github.com/rymbau/breath-focus"><i class="icon-github-circled"></i></a>
     </footer>
 </div>
 

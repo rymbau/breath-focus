@@ -7,6 +7,7 @@ body {
     display: flex;
     font-family: Verdana, Arial, sans-serif;
     font-size: 1em;
+    width: 100%;
     min-height: 100vh;
     margin: 0 auto;
     background-color: #F9F7D2;
@@ -14,6 +15,7 @@ body {
     animation: bgcolor 10s infinite ease-in-out;
     -webkit-animation-play-state: paused;
     animation-play-state: paused;
+    overflow-x: hidden;
 }
 
 .container {
@@ -26,15 +28,65 @@ body {
     width: 100%;
 }
 
-.content {
+.main {
     display: flex;
-    flex: 1 0 auto;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-content: center;
     align-items: center;
-    letter-spacing: 2px;
+    width: 100%;
+    height: 100%;
     font-size: 1.2em;
+}
+
+a, button {
+    cursor: pointer;
+    outline: none;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+h2 {
+    font-size: 1.4em;
+}
+
+/********************************************/
+
+#settings {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 999;
+    color: #616161;
+    font-size: 1.2em;
+    padding: 6px 5px;
+    background: transparent;
+    border: none;
+    opacity: 0.8;
+}
+
+#settings:hover {
+    opacity: 1;
+}
+
+/********************************************/
+
+.main-content {
+    display: flex;
+    order: 1;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    letter-spacing: 1px;
+}
+
+#breathMsg {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 20px;
+    color: #616161;
+    text-align: center;
 }
 
 .breath {
@@ -69,15 +121,43 @@ body {
 
 /********************************************/
 
-#breathMsg {
+.sidebar {
     display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    width: 100%;
-    height: 80px;
-    margin-bottom: 20px;
+    order: 2;
+    flex-direction: column;
+    width: 0;
+    height: 100%;
+    background-color: white;
+    overflow: hidden;
+    opacity: 0;
+    -webkit-transition: opacity 0.5s, width 0.1s;
+    transition: opacity 0.5s, width 0.1s;
+}
+
+.sidebar.isOpen {
+    width: 260px;
+    opacity: 1;
+}
+
+.option {
     color: #616161;
-    text-align: center;
+    padding: 30px;
+}
+
+.option label {
+    font-size: 0.8em;
+}
+
+.option hr {
+    border: none;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.option .title {
+    border-bottom: 1px solid #E7E7E7;
+    margin-bottom: 15px;
+    font-weight: 700;
 }
 
 /********************************************/
@@ -85,54 +165,49 @@ body {
 .timer {
     display: flex;
     align-items: center;
-    color: #616161;
-    height: 80px;
 }
 
 .timer .minutes {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-right: 5px;
 }
 
 .timer .button-icon {
     cursor: pointer;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
+    font-size: 18px;
+    line-height: 1;
+    margin-top: -2px;
+    margin-bottom: -2px;
 }
 
-.timer button {
-    letter-spacing: 1px;
+/********************************************/
+
+#start {
     font-size: 1em;
     color: #7ef2dd;
-    margin-left: 20px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
     padding: 6px 10px;
     background-color: #F9F7D2;
     border-radius: 4px;
     border: 2px solid #AFF2BF;
-    cursor: pointer;
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
 }
 
-.timer button:hover {
+#start:hover {
     color: #F9F7D2;
     background-color: #7ef2dd;
 }
 
-.number {
-    margin-top: 2px;
-    margin-bottom: 2px;
-    color: #616161;
-}
-
 #countdown {
     text-align: center;
-    margin-top: -50px;
+    margin-top: -35px;
     height: 80px;
+}
+
+.number {
+    color: #616161;
 }
 
 /********************************************/
@@ -151,8 +226,21 @@ body {
 
 footer {
     font-family: Consolas, Verdana, Arial, sans-serif;
-    font-size: 0.8em;
+    font-size: 1em;
     text-align: center;
+}
+
+footer small {
+    font-size: 0.6em;
+}
+
+footer a {
+    color: #616161;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #333;
 }
 
 /********************************************/
@@ -256,5 +344,15 @@ footer {
     .breath-content {
         width: 200px;
         height: 200px;
+    }
+
+    .sidebar.isOpen {
+        width: 100%;
+    }
+
+    .main-content.isOpen {
+        width: 0;
+        z-index: 0;
+        overflow: hidden;
     }
 }

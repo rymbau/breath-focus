@@ -12,6 +12,8 @@ It is built with CSS/JavaScript.
 
 The default breath timer is 5 minutes.
 
+The default speed is 6 breaths per minute.
+
 Get yourself comfortable, click start button and follow breathing when ready.
 
 ## License 
