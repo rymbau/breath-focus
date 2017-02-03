@@ -6,6 +6,8 @@ Get yourself comfortable and follow breathing into a regular rhythm until you fe
 
 http://projects.glicer.com/breath-focus/
 
+![breath-focus](img/breath-focus.gif)
+
 ## Usage
 
 It is built with CSS/JavaScript.
