@@ -5,6 +5,7 @@ html {
 
 body {
     display: flex;
+    flex-direction: column;
     font-family: Verdana, Arial, sans-serif;
     font-size: 1em;
     width: 100%;
