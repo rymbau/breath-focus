@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'breath-focus-font';
-  src: url('../font/breath-focus-font.eot?26995576');
-  src: url('../font/breath-focus-font.eot?26995576#iefix') format('embedded-opentype'),
-       url('../font/breath-focus-font.woff2?26995576') format('woff2'),
-       url('../font/breath-focus-font.woff?26995576') format('woff'),
-       url('../font/breath-focus-font.ttf?26995576') format('truetype'),
-       url('../font/breath-focus-font.svg?26995576#breath-focus-font') format('svg');
+  src: url('../font/breath-focus-font.eot?60439665');
+  src: url('../font/breath-focus-font.eot?60439665#iefix') format('embedded-opentype'),
+       url('../font/breath-focus-font.woff2?60439665') format('woff2'),
+       url('../font/breath-focus-font.woff?60439665') format('woff'),
+       url('../font/breath-focus-font.ttf?60439665') format('truetype'),
+       url('../font/breath-focus-font.svg?60439665#breath-focus-font') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -15,7 +15,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'breath-focus-font';
-    src: url('../font/breath-focus-font.svg?26995576#breath-focus-font') format('svg');
+    src: url('../font/breath-focus-font.svg?60439665#breath-focus-font') format('svg');
   }
 }
 */
@@ -60,3 +60,4 @@
 .icon-down-dir:before { content: '\e802'; } /* '' */
 .icon-up-dir:before { content: '\e803'; } /* '' */
 .icon-github-circled:before { content: '\f09b'; } /* '' */
+.icon-hand-peace-o:before { content: '\f25b'; } /* '' */
