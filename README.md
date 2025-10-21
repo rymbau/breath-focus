@@ -4,7 +4,7 @@ Get yourself comfortable and follow breathing into a regular rhythm until you fe
 
 ## Demo
 
-http://projects.glicer.com/breath-focus/
+https://rymbau.github.io/breath-focus
 
 ![breath-focus](img/breath-focus.gif)
 
